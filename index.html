@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Resume</h1>
+        
+        <!-- Input Form for Resume Details -->
+        <div class="input-section">
+            <input type="text" id="name" placeholder="Enter your name">
+            <input type="text" id="title" placeholder="Enter your job title">
+            <input type="text" id="email" placeholder="Enter your email">
+            <input type="text" id="phone" placeholder="Enter your phone number">
+            <input type="text" id="location" placeholder="Enter your location">
+            <textarea id="experience" placeholder="Enter your experience"></textarea>
+            <textarea id="skills" placeholder="Enter your skills"></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <button onclick="generateResume()">Generate Resume</button>
+            <button onclick="downloadResumeAsPDF()">Download as PDF</button>
+            <button onclick="generateShareableLink()">Share Link</button>
+        </div>
+        
+        <!-- Display Shareable Link -->
+        <div id="shareable-link" style="display:none; margin-top: 20px;">
+            <p>Share this link: <input type="text" id="link-field" readonly style="width: 80%; padding: 5px;">
+            <button onclick="copyLink()">Copy Link</button></p>
+        </div>
+
+        <!-- Resume Preview Section -->
+        <div id="resume" class="resume-container">
+            <header>
+                <h2 id="display-name">Your Name</h2>
+                <p id="display-title">Job Title</p>
+            </header>
+            
+            <section class="contact-info">
+                <p id="display-email">Email: example@example.com</p>
+                <p id="display-phone">Phone: 123-456-7890</p>
+                <p id="display-location">Location: City, Country</p>
+            </section>
+
+            <section class="experience">
+                <h3>Experience</h3>
+                <p id="display-experience">Your experience details will appear here.</p>
+            </section>
+
+            <section class="skills">
+                <h3>Skills</h3>
+                <p id="display-skills">Your skills will appear here.</p>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
